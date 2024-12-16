@@ -14,7 +14,7 @@ export default function Home() {
                 <div className="flex-1">
                     <div className="flex flex-col gap-16">
                         <ResourcesList
-                            title="Category 1"
+                            title="Resouce type 1"
                             resourceTypeId={1}
                             items={[
                                 {
@@ -52,6 +52,50 @@ export default function Home() {
                                     name: 'Resource 6',
                                     description: 'Resource description',
                                     price: 666,
+                                    imageUrl: "",
+                                },
+                            ]}
+                        />
+
+                        <ResourcesList
+                            title="Resouce type 2"
+                            resourceTypeId={2}
+                            items={[
+                                {
+                                    id: 7,
+                                    name: 'Resource 7',
+                                    description: 'Resource description',
+                                    price: 777,
+                                    imageUrl: "",
+                                }, {
+                                    id: 8,
+                                    name: 'Resource 8',
+                                    description: 'Resource description',
+                                    price: 888,
+                                    imageUrl: "",
+                                }, {
+                                    id: 9,
+                                    name: 'Resource 9',
+                                    description: 'Resource description',
+                                    price: 999,
+                                    imageUrl: "",
+                                }, {
+                                    id: 10,
+                                    name: 'Resource 10',
+                                    description: 'Resource description',
+                                    price: 1010,
+                                    imageUrl: "",
+                                }, {
+                                    id: 11,
+                                    name: 'Resource 11',
+                                    description: 'Resource description',
+                                    price: 1111,
+                                    imageUrl: "",
+                                }, {
+                                    id: 12,
+                                    name: 'Resource 12',
+                                    description: 'Resource description',
+                                    price: 1212,
                                     imageUrl: "",
                                 },
                             ]}
