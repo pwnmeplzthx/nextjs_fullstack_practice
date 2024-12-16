@@ -22,6 +22,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
+                // add 'dark' to className for enable darkmode
                 className={`${nunito.className} ${nunito.className} antialiased`}
             >
                 <main className="min-h-screen">

@@ -3,11 +3,11 @@ import type { Config } from "tailwindcss";
 const config: Config = {
     darkMode: ["class"],
     content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    ],
+    theme: {
   	extend: {
   		colors: {
   			background: 'hsl(var(--background))',
@@ -57,7 +57,7 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		}
   	}
-  },
-  plugins: [require("tailwindcss-animate")],
+    },
+    plugins: [require("tailwindcss-animate")],
 };
 export default config;

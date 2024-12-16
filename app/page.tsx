@@ -1,6 +1,11 @@
 import { Container, Filters, ResourcesList, Title, TopBar } from "@/components/shared";
+import { prisma } from "@/lib/db";
 
-export default function Home() {
+export default async function Home() {
+    const users = await prisma.user.findMany()
+
+    console.log('users', users)
+
     return (<>
         <Container className="relative mt-10">
             <Title text='All resources' size='lg' className='font-extrabold'/>
