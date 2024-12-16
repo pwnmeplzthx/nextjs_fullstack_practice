@@ -1,10 +1,6 @@
 import { Container, Filters, ResourcesList, Title, TopBar } from "@/components/shared";
-import { prisma } from "@/lib/db";
 
-export default async function Home() {
-    const users = await prisma.user.findMany()
-
-    console.log('users', users)
+export default function Home() {
 
     return (<>
         <Container className="relative mt-10">

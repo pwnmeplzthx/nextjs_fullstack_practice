@@ -14,7 +14,120 @@ datasource db {
 }
 
 model User {
-  id          Int      @id @default(autoincrement())
-  fullName    String?
-  email       String   @unique
+  id                Int           @id @default(autoincrement())
+
+  fullName          String?
+  email             String        @unique
+  password          String
+  role              UserRole      @default(USER)
+
+  provider          String?
+  providerId        String?
+
+  cart              Cart?
+  Orders            Order[]
+  verificationCode  VerificationCode?
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model ResourceType {
+  id                Int           @id @default(autoincrement())
+
+  name              String        @unique
+  resources         Resource[]
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model Resource {
+  id                Int           @id @default(autoincrement())
+
+  name              String
+  description       String?
+
+  resourceType      ResourceType  @relation(fields: [resourceTypeId],  references: [id])
+  resourceTypeId    Int
+  price             Int
+  cartItems         CartItem[]
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model Cart {
+  id                Int           @id @default(autoincrement())
+
+  cartItems         CartItem[]
+  user              User?         @relation(fields: [userId], references: [id])
+  userId            Int?          @unique
+
+  token             String
+  totalAmount       Int           @default(0)
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model CartItem {
+  id                Int           @id @default(autoincrement())
+
+  resource          Resource      @relation(fields: [resourceId], references: [id])
+  resourceId        Int
+
+  cart              Cart          @relation(fields: [cartId], references: [id])
+  cartId            Int
+
+  quantity          Int
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model Order {
+  id                Int           @id @default(autoincrement())
+
+  user              User?         @relation(fields: [userId], references: [id])
+  userId            Int?
+
+  cartToken         String
+  totalAmount       Int
+  status            OrderStatus
+  paymentId         String?
+
+  items             Json
+
+  fullName          String
+  address           String
+  email             String
+  phone             String
+  comment           String
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
+model VerificationCode {
+  id                Int           @id @default(autoincrement())
+
+  user              User          @relation(fields: [userId], references: [id])
+  userId            Int           @unique
+
+  code              String
+  createdAt         DateTime      @default(now())
+
+  @@unique([userId, code])
+}
+
+enum OrderStatus {
+  PENDING
+  SUCCEEDED
+  CANCELLED
+}
+
+enum UserRole {
+  USER
+  ADMIN
 }
