@@ -42,15 +42,29 @@ model ResourceType {
   updatedAt         DateTime      @updatedAt
 }
 
+model Category {
+  id                Int           @id @default(autoincrement())
+  name              String        @unique
+
+  isEnabled         Boolean       @default(true)
+  resources         Resource[]
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+}
+
 model Resource {
   id                Int           @id @default(autoincrement())
 
   name              String
   description       String?
+  isEnabled         Boolean       @default(true)
+  price             Int
+  salePercent       Int?
 
   resourceType      ResourceType  @relation(fields: [resourceTypeId],  references: [id])
   resourceTypeId    Int
-  price             Int
+  categories        Category[]
   cartItems         CartItem[]
 
   createdAt         DateTime      @default(now())

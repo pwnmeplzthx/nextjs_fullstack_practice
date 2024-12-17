@@ -11,23 +11,23 @@ type Props = {
 const resourceTypes = [
     {
         id: 1,
-        name: 'Res type 1',
+        name: 'Category 1',
     },
     {
         id: 2,
-        name: 'Res type 2',
+        name: 'Category 2',
     },
     {
         id: 3,
-        name: 'Res type 3',
+        name: 'Category 3',
     },
     {
         id: 4,
-        name: 'Res type 4',
+        name: 'Category 4',
     },
     {
         id: 5,
-        name: 'Res type 5'
+        name: 'Category 5'
     },
     
     
@@ -36,7 +36,7 @@ const resourceTypes = [
     
 ];
 
-export const ResourceTypes: React.FC<Props> = ({className}) => {
+export const Categories: React.FC<Props> = ({className}) => {
     const resouceTypeActiveId = useResourceTypeStore((state) => state.activeId)
 
     return (

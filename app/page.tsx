@@ -4,7 +4,7 @@ export default function Home() {
 
     return (<>
         <Container className="relative mt-10">
-            <Title text='All resources' size='lg' className='font-extrabold'/>
+            <Title text='Categories' size='lg' className='font-extrabold'/>
         </Container>
         <TopBar />
         <Container className='pb-14 mt-10'>
@@ -23,6 +23,7 @@ export default function Home() {
                                     name: 'Resource 1',
                                     description: 'Resource description',
                                     price: 111,
+                                    salePercent: 24,
                                     imageUrl: "",
                                 }, {
                                     id: 2,
@@ -35,6 +36,7 @@ export default function Home() {
                                     name: 'Resource 3',
                                     description: 'Resource description',
                                     price: 333,
+                                    salePercent: 17,
                                     imageUrl: "",
                                 }, {
                                     id: 4,
@@ -85,6 +87,7 @@ export default function Home() {
                                     name: 'Resource 10',
                                     description: 'Resource description',
                                     price: 1010,
+                                    salePercent: 50,
                                     imageUrl: "",
                                 }, {
                                     id: 11,

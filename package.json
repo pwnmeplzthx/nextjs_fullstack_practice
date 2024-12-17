@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "dup": "docker compose up",
     "prisma:studio": "npx prisma studio",
     "db:migrate:dev": "npx prisma migrate dev",
     "db:reset": "npx prisma migrate reset",

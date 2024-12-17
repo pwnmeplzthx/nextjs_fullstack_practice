@@ -51,6 +51,7 @@ export const ResourcesList: React.FC<Props> = ({
                         description={item.description}
                         imageUrl={item.imageUrl}
                         price={item.price}
+                        salePercent={item.salePercent}
                     />
                 })}
             </div>

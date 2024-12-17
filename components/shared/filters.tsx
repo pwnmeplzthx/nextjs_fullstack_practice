@@ -13,11 +13,11 @@ interface Props {
 export const Filters: React.FC<Props> = ({ className }) => {
     return (
         <div className={cn('', className)}>
-            <Title text='Filtering' size='sm' className='mb-5 font-bold'/>
+            <Title text='Resource types' size='sm' className='mb-5 font-bold'/>
 
             <div className='flex flex-col gap-4'>
-                <FilterCheckbox text='Some bool attr' value='1'/>
-                <FilterCheckbox text='Second some bool attr' value='2'/>
+                <FilterCheckbox text='Res type 1' value='1'/>
+                <FilterCheckbox text='Res type 2' value='2'/>
             </div>
 
             <div className='mt-5 border-y border-y-neutral-100 py-6 pb-7'>
@@ -30,7 +30,7 @@ export const Filters: React.FC<Props> = ({ className }) => {
             </div>
 
             <CheckboxFiltersGroup 
-                title='Filters'
+                title='Attributes filters'
                 className='mt-5'
                 limit={6}
                 defaultItems={[
