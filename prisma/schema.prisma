@@ -27,6 +27,7 @@ model User {
   cart              Cart?
   Orders            Order[]
   verificationCode  VerificationCode?
+  verified          DateTime?
 
   createdAt         DateTime      @default(now())
   updatedAt         DateTime      @updatedAt
