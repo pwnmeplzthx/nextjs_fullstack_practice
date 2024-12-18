@@ -1,6 +1,14 @@
 import { Prisma } from "@prisma/client";
 import { hashSync } from "bcrypt";
 
+export type catType = {
+    id: number;
+    name: string;
+    isEnabled: boolean;
+    createdAt: Date;
+    updatedAt: Date;
+}
+
 export const userSeed: Prisma.UserCreateManyInput[] = [
     {
         fullName: 'Test User 1',
@@ -29,7 +37,7 @@ export const categorySeed = [
     }, {
         name: 'Category 5'
     },
-]
+].map((obj, index) => ({ id: index + 1, ...obj }));
 
 export const resourceTypeSeed = [
     {
@@ -43,8 +51,4 @@ export const resourceTypeSeed = [
     }, {
         name: 'Resource type 5'
     },
-]
-
-export const resourceSeed = [
-    
 ]
