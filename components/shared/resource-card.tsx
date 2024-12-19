@@ -20,7 +20,7 @@ export const ResourceCard: React.FC<Props> = ({
 }) => {
     return (
         <div className={cn('', className)}>
-            <Link href='/resource/1'>
+            <Link href={`/resouce/${id}`}>
                 <div className='flex justify-center items-center p-6 bg-secondary rounded-lg h-[260px]'>
                     {imageUrl 
                         ? <img className='w-[215px] h-[215px]' src={imageUrl} alt={name}/>
